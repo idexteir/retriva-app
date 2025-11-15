@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "retriva-app",
+    "slug": "retriva-app",
+    "scheme": "retriva",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "updates": {
+      "enabled": true
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.anonymous.retrivaapp"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-localization",
+      "expo-web-browser"
+    ],
+    "extra": {
+      "expoClientId": "741237315698-mnh0gfgic1ndj3h0glpcblvdpd99gagj.apps.googleusercontent.com",
+      "router": {},
+      "eas": {
+        "projectId": "8119c27f-7a38-47d5-b8f9-e9d9f5b04bc4"
+      }
+    }
+  }
+}
