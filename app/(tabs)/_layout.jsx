@@ -1,18 +1,38 @@
 // app/(tabs)/_layout.jsx
 import { Tabs } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
+import { Image } from "react-native";
 
-export default function TabsLayout() {
+function TabIcon({ name }) {
+  return (
+    <Image
+      source={name}
+      style={{
+        width: 32,
+        height: 32,
+        resizeMode: "contain",
+        tintColor: "#000",
+      }}
+    />
+  );
+}
+
+export default function Layout() {
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: "#246BFD",
-        tabBarInactiveTintColor: "#999",
+        tabBarShowLabel: true,
+        tabBarActiveTintColor: "#000",
+        tabBarInactiveTintColor: "#777",
         tabBarStyle: {
-          height: 60,
+          backgroundColor: "#fff",
+          height: 75,               // 👈 bigger tab bar
           paddingBottom: 10,
-          paddingTop: 10,
+          paddingTop: 8,
+        },
+        tabBarLabelStyle: {
+          fontSize: 12,
+          marginBottom: 5,
         },
       }}
     >
@@ -20,18 +40,28 @@ export default function TabsLayout() {
         name="home"
         options={{
           title: "Home",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home-outline" size={size} color={color} />
+          tabBarIcon: () => (
+            <TabIcon name={require("../../assets/icons/home.png")} />
           ),
         }}
       />
 
       <Tabs.Screen
-        name="listings"
+        name="activity"
         options={{
-          title: "Listings",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="list-outline" size={size} color={color} />
+          title: "Activity",
+          tabBarIcon: () => (
+            <TabIcon name={require("../../assets/icons/activity.png")} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="favorites"
+        options={{
+          title: "Favorites",
+          tabBarIcon: () => (
+            <TabIcon name={require("../../assets/icons/favorite.png")} />
           ),
         }}
       />
@@ -40,8 +70,8 @@ export default function TabsLayout() {
         name="profile"
         options={{
           title: "Profile",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="person-outline" size={size} color={color} />
+          tabBarIcon: () => (
+            <TabIcon name={require("../../assets/icons/profile.png")} />
           ),
         }}
       />
