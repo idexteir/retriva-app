@@ -1,16 +1,16 @@
+// app/_layout.jsx
 import { Stack } from "expo-router";
-import { useTheme } from "../lib/theme";
-import { i18n } from "../lib/i18n";
+import { StatusBar } from "expo-status-bar";
 
 export default function RootLayout() {
-  const theme = useTheme();
-
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-        contentStyle: { backgroundColor: theme.background },
-      }}
-    />
+    <>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+        }}
+      />
+      <StatusBar style="light" />
+    </>
   );
 }
